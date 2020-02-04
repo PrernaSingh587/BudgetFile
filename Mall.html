@@ -1,14 +1,70 @@
 <html>
 <head>
-    <title> BudgetFile</title>
+    <title> MegaMall</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-<script>
-    if(jQuery)
-        alert("hi");
+<style>
+    .mega
+    {
+        color:blue;
+        font-size:900%;
+        position:absolute;
+        left:450px;
+        top:-100px;
+        display: none;
+    }
+    .bgmega
+    {
+        background-color:lightblue;
+        position:absolute;
+        width:1517px;
+        height:100px;
+        top:30px;
+        z-index:-1;
+        opacity:0.5;
+        display: none;
+    }
     
-    </script>
-
+    
+</style>
+<body>
+ <h1 class ="mega"> MegaMall</h1>
+    <div class="bgmega"> </div>
+   
+    
+    
+</body>
+    
+    
+<script>
+   
+  let controller = (function()
+                   {
+      $(document).ready(function()
+                    { 
+          let s= function()
+          {$(".bgmega").fadeIn(1000);}
+          $(".mega").fadeIn(3000);
+          setTimeout(s,2000);
+          
+           
+          
+          
+      });
+      
+  })();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>    
 
 
 </html>
