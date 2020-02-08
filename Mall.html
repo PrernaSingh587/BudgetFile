@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> MegaMall</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,12 +26,115 @@
         opacity:0.5;
         display: none;
     }
+    .side
+    {
+        background-color: brown;
+        width:20px;
+        height:450px;
+        position: fixed;
+        top:180px;
+        margin-right:30px;
+        display: none;
+        
+    }
+    .follow
+    {
+       background-color: yellow;
+        position: relative;
+        left:1550px;
+        top: 150px;
+        width:150px;
+        height:30px;
+        color:red;
+       text-align: center;
+        line-height: 30px;
+    }
+    .start
+    {
+        
+        height:400px;
+        width:900px;
+        position:absolute;
+        left:320px;
+        top:230px;
+        display:none;
+    }
+    .grocery
+    {
+        height:inherit;
+        width: inherit;
+        
+    }
+    #grocery
+    {
+        position: relative;
+        z-index: 1;
+        top:-125px;
+        left:290px;
+        font-size:350%;
+    }
+    .cloth
+    {
+        height:inherit;
+        width: inherit;
+    }
+    #cloth
+    {
+         position: relative;
+        z-index: 1;
+        top:-125px;
+        left:350px;
+        font-size:350%;
+        color:white;
+    }
+    .elec
+    {
+         height:inherit;
+        width: inherit;
+    }
+    #elec
+    {
+         position: relative;
+        z-index: 1;
+        top:-125px;
+        left:250px;
+        font-size:350%;
+        color:black;
+    }
+    .stn
+    {
+         height:inherit;
+        width: inherit;
+    }
+    #stn
+    {
+         position: relative;
+        z-index: 1;
+        top:-125px;
+        left:250px;
+        font-size:350%;
+        color:black;
+    }
     
     
 </style>
 <body>
  <h1 class ="mega"> MegaMall</h1>
     <div class="bgmega"> </div>
+    <div class="side"> </div>
+    <div class="follow">Follow us</div>
+    <div class="start">
+    <img src="https://www.dumpsters.com/images/blog/grocery-store-waste_1540998058/grocery-store-waste-1200x600.jpg" class="grocery">
+       <h1 id="grocery"> GROCERIES</h1>
+        <img src="https://previews.123rf.com/images/lenblr/lenblr1711/lenblr171100286/90105209-row-of-autumn-coats-hanging-on-rack-shopping-cloth-shop-clothing-store-female-collection-in-fashion-.jpg" class="cloth">
+        <h1 id="cloth">FASHION</h1>
+        <img src="https://media.gettyimages.com/photos/speakers-on-display-in-an-electronics-store-picture-id119134827?s=612x612" class="elec">
+        <h1 id="elec">ELECTRONICS</h1>
+        <img src="https://i.pinimg.com/originals/2d/a6/c6/2da6c661084565a9709d215709f4c526.jpg" class="stn">
+        <h1 id="stn">STATIONARY</h1>
+    
+</div>
+    
    
     
     
@@ -43,14 +147,101 @@
                    {
       $(document).ready(function()
                     { 
-          let s= function()
-          {$(".bgmega").fadeIn(1000);}
+          let s2=function()
+          {
+            $(".side").slideDown(1000); 
+              setTimeout(function()
+                        {
+                  $(".follow").animate({
+                      left:'1350px'
+                  })
+              },500);
+              setTimeout(function()
+                        {
+                  $(".start").fadeIn('slow');
+              },800);
+    //things afterwards
+             $(".grocery").mouseover(function()
+                                  {
+                 $(".grocery").animate({
+                     opacity:0.4,
+                 })
+             });
+              $(".grocery").mouseleave(function()
+                                  {
+                 $(".grocery").animate({
+                     opacity:1,
+                 })
+             });
+              
+              
+               $(".stn").mouseover(function()
+                                  {
+                 $(this).animate({
+                     opacity:0.4,
+                 })
+             });
+              $(".stn").mouseleave(function()
+                                  {
+                 $(this).animate({
+                     opacity:1,
+                 })
+             });
+              
+               $(".cloth").mouseover(function()
+                                  {
+                 $(".cloth").animate({
+                     opacity:0.4,
+                 })
+             });
+              $(".cloth").mouseleave(function()
+                                  {
+                 $(".cloth").animate({
+                     opacity:1,
+                 })
+             });
+              
+              
+              $(".elec").mouseenter(function()
+                                  {
+                 $(this).animate({
+                     opacity:0.4,
+                 })
+             });
+              $(".elec").mouseleave(function()
+                                  {
+                 $(this).animate({
+                     opacity:1,
+                 })
+             });
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+          }
+          let s1= function()
+          {$(".bgmega").fadeIn(1000);
+          setTimeout(s2,1000);
+          }
           $(".mega").fadeIn(3000);
-          setTimeout(s,2000);
+          setTimeout(s1,700);
           
-           
+        
           
           
+      
+    
       });
       
   })();
